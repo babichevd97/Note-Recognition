@@ -2,31 +2,31 @@ function [note,oct] = define_note(f)
 [oct,num]=chooseoctave(f);
 f=f/(2.^(-4+num));
 if f >= 254.284 & f < 269.4045
-    note = ('До');
+    note = ('C');
 elseif f >= 269.4045 & f < 285.424
-    note = ('До диез');
+    note = ('C sharp');
 elseif f >= 285.424 & f < 302.396
-    note = ('Ре');
+    note = ('D');
 elseif f >= 302.396 & f < 320.3775
-    note = ('Ре диез');
+    note = ('D sharp');
 elseif f >= 320.3775 & f < 339.428
-    note = ('Ми');
+    note = ('E');
 elseif f >= 339.428 & f < 359.611
-    note = ('Фа');
+    note = ('F');
 elseif f >= 359.611 & f < 380.9945
-    note = ('Фа диез');
+    note = ('F sharp');
 elseif f >= 380.9945 & f < 403.65
-    note = ('Соль');
+    note = ('G');
 elseif f >= 403.65 & f < 427.6525
-    note = ('Соль диез');
+    note = ('G sharp');
 elseif f >= 427.6525 & f < 453.082
-    note = ('Ля');
+    note = ('A');
 elseif f >= 453.082 & f < 480.0235
-    note = ('Ля диез');
+    note = ('A sharp');
 elseif f >= 480.0235 & f < 508.567
-    note = ('Си');
+    note = ('B');
 else
-    disp('Частота вне диапазона')
+    disp('Frequency out of range')
 end
 
 end

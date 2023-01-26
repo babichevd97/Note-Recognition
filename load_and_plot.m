@@ -1,9 +1,9 @@
 function load_and_plot(signal)
-[data,fs]=audioread(signal); %представление сигнала в виде отсчетов + частота дискретизации
-data=data(:,1); % делаем из стерео звука - мон (одномерный массив)
-N=length(data); % длина отсчетов (длина сигнала)
-t=linspace(0,N/fs,N); % вычисляем моменты времени для каждого отсчета (единица времени на каждый отсчёт)
-% Строим сигнал (отсчеты, время)
+[data,fs]=audioread(signal); %signal representation as samples + sampling rate
+data=data(:,1); %turn stereo sound into mono (one-dimensional array)
+N=length(data); %sampling length (signal length)
+t=linspace(0,N/fs,N); %calculate the moments of time for each count (unit of time per count)
+%СЃonstructing the signal (counts, time)
 figure;
-plot(t,data);xlabel('время(секунды)');ylabel('отсчеты');
+plot(t,data);xlabel('time(sec)');ylabel('samples');
 end

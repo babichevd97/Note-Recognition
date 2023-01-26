@@ -1,31 +1,31 @@
 function [oct,num] = chooseoctave(f)
 if f >= 15 &  f <= 31
-    oct = ('Субконтроктава');
+    oct = ('subcontroctave');
     num = 0;
 elseif f >= 32 & f <= 63
-    oct = ('Контроктава');
+    oct = ('counter octave');
     num = 1;
 elseif f >= 64 & f <= 124 
-    oct = ('Большая октава');
+    oct = ('large octave');
     num = 2;
 elseif f >= 128 & f <= 252
-    oct = ('Малая октава');
+    oct = ('small octave');
     num = 3;
 elseif f >= 259 & f <= 510
-    oct = ('Первая октава');
+    oct = ('first octave');
     num = 4;
 elseif f >= 515 & f <= 1010
-    oct = ('Вторая октава');
+    oct = ('second octave');
     num = 5;
 elseif f >= 1030 & f <= 1995
-    oct= ('Третья октава');
+    oct= ('third octave');s
     num = 6;
 elseif f >= 2050 & f <= 4050
-    oct = ('Четвертая октава');
+    oct = ('fourth octave');
     num = 7;
 elseif f >= 4150 & f <= 7902
-    oct = ('Пятая октава');
-    num = 8;
+    oct = ('fifth octave');
+num = 8;
 end
 
 end
