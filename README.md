@@ -8,4 +8,4 @@ The algorithms were tested on 15 phonograms of different complexity. The algorit
 
 ## Theoretical Introduction
 Most of the signals around us are difficult to express in the form of a simple mathematical formula, because over time the signal can become louder and quieter, can sound intermittent or constant. In this case the signal can be represented as a sum of simple basis functions φ(t). Then the original signal can be represented in the following form:
-> f(t)= ∑_(k=-∞)^∞▒〖c_k φ(t) 
+$$f(t)=\sum_{k=-∞}^∞c_kφ(t)$$
