@@ -38,4 +38,20 @@ Spectrum represented by a set of numbers can be analyzed using numerical methods
 On top of that Matlab supports this transformation as well as lots of numerical methods for analysis
 
 ### Window Fourier Transform
+The algorithm is based on the discrete Fourier transform described above. In order to show the dependence of the harmonic frequency of the original signal on time, some "Window" (window or weight function) is used. It runs through the whole time interval in such a way that for each time interval, the window function is applied:
+$$W(n-m)$$
+- n - array samples index
+- m - sets the position of the window
+
+This function is multiplied with each of the intervals, and can be applied with some overlap to each interval (for more accurate analysis). Subsequently, the Fourier transform for each interval is calculated. The result of multiplication is a complex vector of amplitudes corresponding to samples of the selected interval, which is written into a matrix and represents the magnitude and phase of each point in time and frequency.
+In general, it looks like this:
+$$X(m,w)=\sum_{n=-∞}^∞x[n]W(n-m)e^{-jwn}$$
+- x[n] - array of samples
+- W[n] - window function
+
+![alt text](https://github.com/babichevd97/Note-Recognition/blob/master/images/WindowFourier.png?raw=true)
+
+The choice of window depends on the task and on the original signal. After all, by selecting some part of the signal with the window function, it is impossible to reproduce all the frequency characteristics on a given interval as accurately as possible. Window function creates spectral leaks - new frequencies appear that are not present in audio signal. You can minimize the number of leaks just by properly selecting the window function. For example, a simple rectangular window is ideal for sinusoids of comparable loudness, but you should not use this window for sinusoids with disparate amplitudes. The Blackman window is good for cases where high frequency spectrum leakage obscures low frequencies. These windows, in turn, do not handle noise well. The Henning window is the best option for analyzing almost periodic signals, which are the vibrations of strings.
+
+The only disadvantage of the Fourier window transform is that good frequency-time resolution cannot be achieved simultaneously in time and frequency. It is not possible to provide minimum distortion for both features. A wide window gives excellent representation in the frequency domain, while it is impossible to determine when the signal started and when it finished. On the other hand, a narrow window gives excellent representation in the time domain, while being poor in the frequency domain. The choice of window width is a compromise and depends on the task at hand and the problem being investigated.
 
