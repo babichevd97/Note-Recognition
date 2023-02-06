@@ -56,7 +56,7 @@ Below are the above windows and their spectrums:
 
 ![plot](./Images/RectangularWindow.png)
 ![plot](./Images/BlackmanWindow.png)
-
+![plot](./Images/HannWindow.png)
 
 The only disadvantage of the Fourier window transform is that good frequency-time resolution cannot be achieved simultaneously in time and frequency. It is not possible to provide minimum distortion for both features. A wide window gives excellent representation in the frequency domain, while it is impossible to determine when the signal started and when it finished. On the other hand, a narrow window gives excellent representation in the time domain, while being poor in the frequency domain. The choice of window width is a compromise and depends on the task at hand and the problem being investigated.
 
