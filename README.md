@@ -79,9 +79,6 @@ $$|X(t,w)|$$ will be obtained, each column of which is a set of complex amplitud
 
 By selecting maxima in each column of the matrix |X(t,w)| we can set a threshold, a modulus value of the calculated amplitude, from which the beginning of the note sound will be determined. We can also set the threshold from which the end of the note will be determined. The values of amplitudes for different notes have no limits, so we will not be able to select the general threshold. The way out of this situation can be that the obtained array of complex amplitude modules can be normalized by limiting the values on some interval. As a result, any phonogram after the above mentioned transformations will be written to the array where the maximum value |X(t,w)| will correspond to 1, for example, and the minimum - 0. Now, knowing the minima and maxima of the signal and their correspondence to the sounding notes, we can trace the moments of the beginning and end of notes sounding. However, we should consider the fact that noise may be heard in the background of any recording, and it must be taken into account, otherwise, with a sufficiently low threshold set for the start of notes sounding, any noise will be perceived as a sounding note. For this purpose it is necessary to pass obtained values through the low-pass filter, then short sharp jumps of |X(t,w)| values will be smoothed by the filter:
 $$A_{filter}^{max}=∑_{i=1}^NA_{max}*W_i$$
-$$A_{max}$$ - maximum amplitudes values
-$$W_i$$ - weight function, $$\sum_i^NW_i =1$$
-$$A_{filter}^{max}$$ - obtained values, after applying the weight function
 
 The algorithm for determining start and end of a note can be implemented as a finite automata:
 
