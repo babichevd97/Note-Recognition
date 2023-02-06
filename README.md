@@ -49,7 +49,7 @@ $$X(m,w)=\sum_{n=-∞}^∞x[n]W(n-m)e^{-jwn}$$
 - x[n] - array of samples
 - W[n] - window function
 
-![alt text](https://github.com/babichevd97/Note-Recognition/blob/master/images/WindowFourier.png?raw=true)
+![plot](./Images/WindowFourier.png)
 
 The choice of window depends on the task and on the original signal. After all, by selecting some part of the signal with the window function, it is impossible to reproduce all the frequency characteristics on a given interval as accurately as possible. Window function creates spectral leaks - new frequencies appear that are not present in audio signal. You can minimize the number of leaks just by properly selecting the window function. For example, a simple rectangular window is ideal for sinusoids of comparable loudness, but you should not use this window for sinusoids with disparate amplitudes. The Blackman window is good for cases where high frequency spectrum leakage obscures low frequencies. These windows, in turn, do not handle noise well. The Henning window is the best option for analyzing almost periodic signals, which are the vibrations of strings.
 
