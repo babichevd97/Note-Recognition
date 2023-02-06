@@ -85,4 +85,4 @@ $$A_{filter}^{max}=∑_{i=1}^NA_{max}*W_i$$
 
 The algorithm for determining start and end of a note can be implemented as a finite automata:
 
-![plot](./Images/G_small_oct_samplesFiniteAutomata.png)
+![plot](./Images/FiniteAutomata.png)
