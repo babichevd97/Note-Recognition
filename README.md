@@ -88,8 +88,26 @@ The algorithm for determining start and end of a note can be implemented as a fi
 - second threshold – end of note
 
 ### Defining a sounding note
+### Cepstrum analysis
 When we find the moments of the beginning and the end of notes in the phonogram, we can find the values of the signal samples corresponding to these moments of time, and highlight single note. Then, for the selected note we can apply a DFT, and for the resulting set of complex amplitudes find the maximum among the amplitude modules, determining the frequency for the found amplitude. By comparing this frequency with the known set of frequencies of the tempered string, the note and octave can be determined. 
 Meanwhile, stringed musical instruments has a large number of overtones, which will make it difficult to determine the fundamental frequency of the sounding note. To determine the fundamental frequency among the overtones, we can analyze not the spectrum of a particular note, but its cepstrum, which greatly reduces the influence of overtones and amplitude peaks in the search for the maximum. Experimentally, it was found that for muted-sounding notes, the Fourier transform is sufficient to determine the frequency, while the kepstra gives a more accurate representation for pure notes. The algorithm for determining the fundamental tone frequency:
 
 ![plot](./Images/AlgorithmCepstrum.png)
+
+### Harmonics analysis
+Using cepstrum as a tool for determining the fundamental frequency is a low-cost operation, but this type of analysis is suitable for analyzing notes with few harmonics in their spectrum. A detailed harmonic analysis of the note spectrum is necessary for a more accurate determination of notes. 
+It is known that the frequencies of the harmonics of one note are multiples of each other, this property can be used to identify the fundamental frequency, besides, in the same way you can determine how many harmonics of the fundamental frequency are present in the note.
+The principle of the algorithm can be conveyed by the figure below:
+
+![plot](./Images/HarmonicsAnalysis.png)
+
+The figure shows that the frequency multiple of the maximum amplitude frequency, which has the minimum value of the corresponding amplitude, will be the frequency of the main tone. And how many times the found frequency is less than the frequency of the maximum amplitude, determines the number of harmonics. The only thing that must be set for the correct operation of the algorithm is the threshold below which the search for amplitudes will not be performed, and the number that determines up to which harmonic will be analyzed. As practice shows, this number does not exceed 5.
+We can represent the algorithm as follows:
+
+![plot](./Images/AlgorithmHarmonics.png)
+
+### Best algorithm for specific case
+Harmonic analysis is a more time-consuming algorithm, while the accuracy of determining the fundamental tone is much higher than with cepstral analysis. By combining the algorithms described above, we can get final algorithm:
+
+
 
