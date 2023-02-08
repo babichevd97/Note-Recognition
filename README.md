@@ -87,7 +87,7 @@ The algorithm for determining start and end of a note can be implemented as a fi
 - first threshold – note start
 - second threshold – end of note
 
-### Defining a sounding note
+## Defining a sounding note
 ### Cepstrum analysis
 When we find the moments of the beginning and the end of notes in the phonogram, we can find the values of the signal samples corresponding to these moments of time, and highlight single note. Then, for the selected note we can apply a DFT, and for the resulting set of complex amplitudes find the maximum among the amplitude modules, determining the frequency for the found amplitude. By comparing this frequency with the known set of frequencies of the tempered string, the note and octave can be determined. 
 Meanwhile, stringed musical instruments has a large number of overtones, which will make it difficult to determine the fundamental frequency of the sounding note. To determine the fundamental frequency among the overtones, we can analyze not the spectrum of a particular note, but its cepstrum, which greatly reduces the influence of overtones and amplitude peaks in the search for the maximum. Experimentally, it was found that for muted-sounding notes, the Fourier transform is sufficient to determine the frequency, while the kepstra gives a more accurate representation for pure notes. The algorithm for determining the fundamental tone frequency:
