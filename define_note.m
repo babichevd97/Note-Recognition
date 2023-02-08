@@ -1,6 +1,14 @@
+%After defining main tone this function will determine note itself through frequency and corresponding octave
+
 function [note,oct] = define_note(f)
+%Receives only one parameter - f as frequency. Returns octave name - oct and note name - note
+
 [oct,num]=chooseoctave(f);
+%Pre-function to get octave name and octave - number
+
 f=f/(2.^(-4+num));
+%Normilizing frequency range
+
 if f >= 254.284 & f < 269.4045
     note = ('C');
 elseif f >= 269.4045 & f < 285.424
