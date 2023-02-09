@@ -109,5 +109,6 @@ We can represent the algorithm as follows:
 ### Best algorithm for specific case
 Harmonic analysis is a more time-consuming algorithm, while the accuracy of determining the fundamental tone is much higher than with cepstral analysis. By combining the algorithms described above, we can get final algorithm:
 
+![plot](./Images/AlgorithmOptimal.png)
 
 
