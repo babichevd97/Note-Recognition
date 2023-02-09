@@ -1,7 +1,7 @@
 %After defining main tone this function will determine octave through frequency
 
 function [oct,num] = chooseoctave(f)
-%Receives only one parameter - f as frequency. Returns octave name - oct and num - number of octave
+%Receives only one parameter - f as frequency. Returns octave name - oct and num - number of octave (required for note definition)
 
 if f >= 15 &  f <= 31
     oct = ('subcontroctave');
